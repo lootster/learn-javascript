@@ -1,12 +1,9 @@
-const posts = [
-  { title: "Post One", body: "This is post one" },
-  { title: "Post Two", body: "This is post two" }
-];
+const posts = [{ title: "Post One" }, { title: "Post Two" }];
 
 function getPosts() {
   setTimeout(() => {
-    posts.forEach((post, index) => {
-      console.log(post.title);
+    posts.forEach(post => {
+      console.log("Title: " + post.title);
     });
     console.log("\n");
   }, 1000);
@@ -18,14 +15,12 @@ function createPost(post) {
   }, 2000);
 }
 
-getPosts(); // Log 2 posts to console
+const post3 = { title: "Post Three" };
+const post4 = { title: "Post Four" };
 
-// Add another post: post3
-let post3 = { title: "Post Three", body: "This is post three" };
+createPost(post3); // Add another post3
 
-createPost(post3);
-// Still Log 2 posts to console, why?
-// Hint: Delay in setTimeout
+getPosts(); // Log 2 posts instead of 3, why? Hint: Delay in setTimeout
 
 // Callback to the rescue!
 function createPostWithCallback(post, callback) {
@@ -35,8 +30,4 @@ function createPostWithCallback(post, callback) {
   }, 2000);
 }
 
-// Add another post: post4
-let post4 = { title: "Post Four", body: "This is post Four" };
-
-// Now will log all 4 posts!
-createPostWithCallback(post4, getPosts);
+createPostWithCallback(post4, getPosts); // Now will log all posts!

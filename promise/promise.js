@@ -2,7 +2,7 @@ const posts = [{ title: "Post One" }, { title: "Post Two" }];
 
 function getPosts() {
   setTimeout(() => {
-    posts.forEach((post, index) => {
+    posts.forEach((post) => {
       console.log("Title: " + post.title);
     });
     console.log("\n");
@@ -15,8 +15,8 @@ function createPost(post) {
   }, 2000);
 }
 
-let post3 = { title: "Post Three" };
-let post4 = { title: "Post Four" };
+const post3 = { title: "Post Three" };
+const post4 = { title: "Post Four" };
 
 createPost(post3); // Add another post3
 
@@ -26,7 +26,7 @@ getPosts(); // Log 2 posts instead of 3, why? Hint: Delay in setTimeout
 function createPostWithPromise(post) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      posts.push(post); // Add another post4
+      posts.push(post);
 
       const error = false;
 
