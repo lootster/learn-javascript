@@ -1,4 +1,4 @@
-const { Greet, ArithmeticOperation } = require("../callback/callback-function");
+const { Greet, ArithmeticOperation } = require("./callback-example1");
 
 describe("Greet", () => {
   let greet;
